@@ -9,6 +9,13 @@ public class Calculator {
 			return 0;
 		}
 		else {
+			if (text.startsWith("//")) {
+					int delIndex = text.indexOf("//") + 2;
+					String delimiter = text.substring(delIndex, delIndex + 1);
+					String textWithoutSlash = text.substring(text.indexOf("n") + 1);
+					String numbers[] = textWithoutSlash.split(delimiter);
+					return sum(numbers);
+				}
 			if (text.contains(",") || text.contains("\n")) {
 				String numbers[] = text.split(",|\n");
 				checkNegatives(numbers);
@@ -42,7 +49,7 @@ public class Calculator {
 		int total = 0;
 		for (String number : numbers) {
 			if (toInt(number.trim()) <= 1000)
-			total += toInt(number);
+				total += toInt(number);
 		}
 		return total;
 	}
@@ -50,8 +57,7 @@ public class Calculator {
 
 
 
-
-
+ 
 
 
 

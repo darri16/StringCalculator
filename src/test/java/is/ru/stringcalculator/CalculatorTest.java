@@ -36,7 +36,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public final void testNegativeNumberException() {
+	public void testNegativeNumberException() {
     RuntimeException exception = null;
 	    try {
 	        Calculator.add("2,-4,3,-5");
@@ -51,5 +51,21 @@ public class CalculatorTest {
 	public void testNumbersBiggerThanThousand() {
 		assertEquals(2, Calculator.add("1001,2"));
 	}
+
+	@Test
+	public void testDifferentDelimiters() {
+    	assertEquals(3, Calculator.add("//;n1;2"));
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
 

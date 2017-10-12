@@ -12,7 +12,6 @@ public class Calculator {
 			if (text.contains(",") || text.contains("\n")) {
 				String numbers[] = text.split(",|\n");
 				checkNegatives(numbers);
-
 				return sum(numbers);
 			}
 		return 1;
@@ -42,9 +41,10 @@ public class Calculator {
 	private static int sum (String [] numbers) {
 		int total = 0;
 		for (String number : numbers) {
+			if (toInt(number.trim()) <= 1000)
 			total += toInt(number);
-			}
-			return total;
+		}
+		return total;
 	}
 }
 
